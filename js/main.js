@@ -218,7 +218,7 @@ class Timeline {
 // 倒计时功能
 class Countdown {
     constructor() {
-        this.targetDate = new Date('2025-08-10T00:00:00').getTime();
+        this.targetDate = new Date('2025-08-29T00:00:00').getTime();
         this.elements = {
             days: document.getElementById('days'),
             hours: document.getElementById('hours'),
