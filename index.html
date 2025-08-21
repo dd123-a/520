@@ -9,13 +9,13 @@
 <body>
     <header id="hero">
         <canvas id="stars"></canvas>
-        
+
         <!-- 鹊桥动画 -->
         <svg id="bridge" viewBox="0 0 1000 600" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2;">
             <!-- 鹊桥路径 -->
-            <path id="bridgePath" d="M 100 400 Q 300 300 500 350 Q 700 300 900 400" 
+            <path id="bridgePath" d="M 100 400 Q 300 300 500 350 Q 700 300 900 400"
                   stroke="#ffd700" stroke-width="3" fill="none" opacity="0.8"/>
-            
+
             <!-- 装饰性喜鹊 -->
             <g id="magpies">
                 <circle cx="200" cy="340" r="3" fill="#ffd700" opacity="0.6">
@@ -31,49 +31,118 @@
                     <animate attributeName="opacity" values="0.6;1;0.6" dur="2.2s" repeatCount="indefinite"/>
                 </circle>
             </g>
-            
+
             <!-- 牛郎 -->
             <g id="niulang" transform="translate(50, 380)">
                 <circle cx="0" cy="0" r="8" fill="#ff9aa2"/>
                 <text x="0" y="25" text-anchor="middle" fill="#ffd700" font-size="12">💑</text>
-                <animateTransform 
-                    attributeName="transform" 
+                <animateTransform
+                    attributeName="transform"
                     type="translate"
                     values="50,380;150,350;250,330;350,340;450,350"
                     dur="8s"
                     repeatCount="indefinite"/>
             </g>
-            
+
             <!-- 织女 -->
             <g id="zhinv" transform="translate(950, 380)">
                 <circle cx="0" cy="0" r="8" fill="#ffb7b2"/>
                 <text x="0" y="25" text-anchor="middle" fill="#ffd700" font-size="12">👰</text>
-                <animateTransform 
-                    attributeName="transform" 
+                <animateTransform
+                    attributeName="transform"
                     type="translate"
                     values="950,380;850,350;750,330;650,340;550,350"
                     dur="8s"
                     repeatCount="indefinite"/>
             </g>
-            
+
             <!-- 相遇时的爱心特效 -->
             <g id="heartEffect" opacity="0">
                 <text x="500" y="350" text-anchor="middle" fill="#ff6b6b" font-size="20">💕</text>
                 <animate attributeName="opacity" values="0;0;0;0;1;1;1;0;0;0;0" dur="8s" repeatCount="indefinite"/>
-                <animateTransform 
-                    attributeName="transform" 
+                <animateTransform
+                    attributeName="transform"
                     type="scale"
                     values="0.5;0.5;0.5;0.5;1.5;1.5;1.5;0.5;0.5;0.5;0.5"
                     dur="8s"
                     repeatCount="indefinite"/>
             </g>
         </svg>
-        
+
         <div class="hero-content">
             <h1>我们的七夕</h1>
             <p>愿有岁月可回首，且以深情共白头</p>
+            <p>爱可排万难，希望以后的每一天都是你</p>
         </div>
     </header>
+
+    <!-- 新增的图片画廊部分 -->
+    <section id="gallery">
+        <h2 class="section-title">我们的记忆</h2>
+        <div class="gallery-container">
+            <!-- 图片项1 -->
+            <div class="gallery-item">
+                <img src="img/BT7A3523.JPG" alt="我们的美好时刻" style="width: 100%; height: auto; max-height: 300px; object-fit: contain;">
+                <div class="gallery-caption">
+                    <p>最喜欢这个小宝</p>
+                </div>
+            </div>
+
+            <!-- 图片项2 -->
+            <div class="gallery-item">
+                <img src="img/0.jpg" alt="我们的旅行" style="width: 100%; height: auto; max-height: 300px; object-fit: contain;">
+                <div class="gallery-caption">
+                    <p>宝宝蛋最好看</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="img/1.jpg" alt="我们的旅行" style="width: 100%; height: auto; max-height: 300px; object-fit: contain;">
+                <div class="gallery-caption">
+                    <p>超级大奖</p>
+                </div>
+            </div>
+
+            <!-- 图片项3 -->
+            <div class="gallery-item">
+                <img src="img/2.jpg" alt="庆祝时刻" style="width: 100%; height: auto; max-height: 300px; object-fit: contain;">
+                <div class="gallery-caption">
+                    <p>我帅帅</p>
+                </div>
+            </div>
+
+            <!-- 图片项4 -->
+            <div class="gallery-item">
+                <img src="img/3.jpg" alt="日常生活" style="width: 100%; height: auto; max-height: 300px; object-fit: contain;">
+                <div class="gallery-caption">
+                    <p>日常生活</p>
+                </div>
+            </div>
+
+            <!-- 图片项5 -->
+            <div class="gallery-item">
+                <img src="img/4.jpg" alt="特别的日子" style="width: 100%; height: auto; max-height: 300px; object-fit: contain;">
+                <div class="gallery-caption">
+                    <p>特别的日子</p>
+                </div>
+            </div>
+
+            <!-- 图片项6 -->
+            <div class="gallery-item">
+                <img src="img/5.jpg" alt="未来展望" style="width: 100%; height: auto; max-height: 300px; object-fit: contain;">
+                <div class="gallery-caption">
+                    <p>哦莫哦莫加加加</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 图片模态框 -->
+    <div class="modal" id="imageModal">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
 
     <section id="timeline">
         <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 3rem; color: var(--peach);">我们的故事</h2>
