@@ -1,0 +1,24 @@
+:root {
+  --pink: #ff9aa2;
+  --peach: #ffb7b2;
+  --cream: #ffdac1;
+  --midnight: #0a0a23;
+  --star: #ffd700;
+  --white: #ffffff;
+  --gradient-bg: linear-gradient(135deg, var(--midnight) 0%, #1e1e4a 50%, #2a2a5a 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Zhi Mang Xing', cursive;
+  background: var(--gradient-bg);
+  color: var(--white);
+  overflow-x: hidden;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Zhi+Mang+Xing&display=swap');

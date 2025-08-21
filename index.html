@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我们的七夕 · 2025</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <header id="hero">
+        <canvas id="stars"></canvas>
+        
+        <!-- 鹊桥动画 -->
+        <svg id="bridge" viewBox="0 0 1000 600" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2;">
+            <!-- 鹊桥路径 -->
+            <path id="bridgePath" d="M 100 400 Q 300 300 500 350 Q 700 300 900 400" 
+                  stroke="#ffd700" stroke-width="3" fill="none" opacity="0.8"/>
+            
+            <!-- 装饰性喜鹊 -->
+            <g id="magpies">
+                <circle cx="200" cy="340" r="3" fill="#ffd700" opacity="0.6">
+                    <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="350" cy="320" r="3" fill="#ffd700" opacity="0.6">
+                    <animate attributeName="opacity" values="0.6;1;0.6" dur="2.5s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="650" cy="320" r="3" fill="#ffd700" opacity="0.6">
+                    <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="800" cy="340" r="3" fill="#ffd700" opacity="0.6">
+                    <animate attributeName="opacity" values="0.6;1;0.6" dur="2.2s" repeatCount="indefinite"/>
+                </circle>
+            </g>
+            
+            <!-- 牛郎 -->
+            <g id="niulang" transform="translate(50, 380)">
+                <circle cx="0" cy="0" r="8" fill="#ff9aa2"/>
+                <text x="0" y="25" text-anchor="middle" fill="#ffd700" font-size="12">💑</text>
+                <animateTransform 
+                    attributeName="transform" 
+                    type="translate"
+                    values="50,380;150,350;250,330;350,340;450,350"
+                    dur="8s"
+                    repeatCount="indefinite"/>
+            </g>
+            
+            <!-- 织女 -->
+            <g id="zhinv" transform="translate(950, 380)">
+                <circle cx="0" cy="0" r="8" fill="#ffb7b2"/>
+                <text x="0" y="25" text-anchor="middle" fill="#ffd700" font-size="12">👰</text>
+                <animateTransform 
+                    attributeName="transform" 
+                    type="translate"
+                    values="950,380;850,350;750,330;650,340;550,350"
+                    dur="8s"
+                    repeatCount="indefinite"/>
+            </g>
+            
+            <!-- 相遇时的爱心特效 -->
+            <g id="heartEffect" opacity="0">
+                <text x="500" y="350" text-anchor="middle" fill="#ff6b6b" font-size="20">💕</text>
+                <animate attributeName="opacity" values="0;0;0;0;1;1;1;0;0;0;0" dur="8s" repeatCount="indefinite"/>
+                <animateTransform 
+                    attributeName="transform" 
+                    type="scale"
+                    values="0.5;0.5;0.5;0.5;1.5;1.5;1.5;0.5;0.5;0.5;0.5"
+                    dur="8s"
+                    repeatCount="indefinite"/>
+            </g>
+        </svg>
+        
+        <div class="hero-content">
+            <h1>我们的七夕</h1>
+            <p>愿有岁月可回首，且以深情共白头</p>
+        </div>
+    </header>
+
+    <section id="timeline">
+        <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 3rem; color: var(--peach);">我们的故事</h2>
+        <div class="timeline-container">
+            <!-- 时间线内容将通过JavaScript动态生成 -->
+        </div>
+    </section>
+
+    <section id="countdown">
+        <h2 style="font-size: 2.5rem; margin-bottom: 2rem; color: var(--peach);">距离下一个七夕还有</h2>
+        <div class="countdown-container">
+            <div class="countdown-item">
+                <span class="number" id="days">00</span>
+                <span class="label">天</span>
+            </div>
+            <div class="countdown-item">
+                <span class="number" id="hours">00</span>
+                <span class="label">时</span>
+            </div>
+            <div class="countdown-item">
+                <span class="number" id="minutes">00</span>
+                <span class="label">分</span>
+            </div>
+            <div class="countdown-item">
+                <span class="number" id="seconds">00</span>
+                <span class="label">秒</span>
+            </div>
+        </div>
+    </section>
+
+    <footer style="text-align: center; padding: 2rem; opacity: 0.7;">
+        <p>© 2025 With Love ❤️</p>
+    </footer>
+
+    <button class="music-control" id="musicToggle">♫</button>
+    <button class="fireworks-control" id="fireworksToggle">🎆</button>
+    <audio id="bgm" loop>
+        <source src="music/qixi.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,201 @@
+@import url('variables.css');
+
+#hero {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+#stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: var(--white);
+}
+
+#bridge {
+  opacity: 0;
+  animation: bridgeAppear 3s ease-in-out 2s forwards;
+}
+
+@keyframes bridgeAppear {
+  0% { opacity: 0; transform: translateY(50px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 20px var(--star);
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+#timeline {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.timeline-item {
+  display: flex;
+  margin-bottom: 3rem;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.6s ease;
+}
+
+.timeline-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.timeline-date {
+  min-width: 150px;
+  background: var(--pink);
+  padding: 1rem;
+  border-radius: 10px;
+  margin-right: 2rem;
+  text-align: center;
+  color: var(--midnight);
+  font-weight: bold;
+}
+
+.timeline-content {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+}
+
+.timeline-content h3 {
+  color: var(--peach);
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.timeline-content p {
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+#countdown {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.countdown-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.countdown-item {
+  background: var(--pink);
+  color: var(--midnight);
+  padding: 2rem;
+  border-radius: 15px;
+  min-width: 100px;
+  text-align: center;
+}
+
+.countdown-item .number {
+  font-size: 2rem;
+  font-weight: bold;
+  display: block;
+}
+
+.countdown-item .label {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.music-control {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  padding: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: var(--white);
+  backdrop-filter: blur(10px);
+}
+
+.music-control:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.fireworks-control {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  z-index: 1000;
+  background: rgba(255, 153, 162, 0.3);
+  border: none;
+  padding: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: var(--white);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.fireworks-control:hover {
+  background: rgba(255, 153, 162, 0.5);
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .timeline-item {
+    flex-direction: column;
+  }
+  
+  .timeline-date {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+  
+  .countdown-container {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  
+  #bridge {
+    height: 60vh;
+  }
+  
+  #bridge text {
+    font-size: 10px;
+  }
+  
+  .fireworks-control {
+    top: 140px;
+  }
+}
